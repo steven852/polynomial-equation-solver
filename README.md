@@ -1,2 +1,2 @@
 # PolynomialSovler
-This program will attempt to solve high order polynomial equations.
+This is a c++ program that uses Newton's method inoreader to find one solution (root) in a polynomial equation.
