@@ -1,2 +1,2 @@
 # PolynomialSovler
-This is a c++ program that uses Newton's method inoreader to find one solution (root) in a polynomial equation.
+This is a C++ program that uses Newton's method in order to find a solution (root) in a polynomial equation.

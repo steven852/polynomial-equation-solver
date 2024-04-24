@@ -2,7 +2,7 @@ workspace "GitHub"
    configurations { "Debug", "Release" }
 
 project "polynomial-equation-solver"
-   kind "ConsoleApp"
+   kind "SharedLib"
    language "C++"
    files { "**.hpp", "**.cpp" }
 
