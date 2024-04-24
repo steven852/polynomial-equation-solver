@@ -20,7 +20,7 @@ private:
     cout << endl;
 
     try {
-     this->coefficients.push_back(stod(coefficient));
+     coefficients.push_back(stod(coefficient));
     }
     catch (const std::invalid_argument& ia) {
       cout << "invalid input\n";
@@ -33,7 +33,7 @@ private:
       cout << endl;
 
        try {
-        this->coefficients.push_back(stod(coefficient));
+        coefficients.push_back(stod(coefficient));
         power += 1;
       }
       catch (const std::invalid_argument& ia) {
@@ -43,27 +43,27 @@ private:
   }
 
   void calculateDerivativeCoefficients(){
-    vector<double> coeffs = this->coefficients;
+    vector<double> coeffs = coefficients;
 
     for(int i = 1; i < coeffs.size(); i++){
-      this->derivativeCoefficients.push_back(coeffs[i]*i);
+      derivativeCoefficients.push_back(coeffs[i]*i);
     }
   }
 
 public:
   Polynom(){
-    this->setCoefficients();
-    this->calculateDerivativeCoefficients();
+    setCoefficients();
+    calculateDerivativeCoefficients();
   }
 
   Polynom(vector<double> coefficients){
-    this->coefficients = coefficients;
-    this->calculateDerivativeCoefficients();
+    coefficients = coefficients;
+    calculateDerivativeCoefficients();
   }
 
   void reSetCoefficients(){
-    this->coefficients = {};
-    this->derivativeCoefficients = {};
+    coefficients = {};
+    derivativeCoefficients = {};
     cout << "Polynom was reseted input a new polynom\n" << endl;
     setCoefficients();
     calculateDerivativeCoefficients();

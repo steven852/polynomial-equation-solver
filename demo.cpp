@@ -1,6 +1,6 @@
 #include <iostream>
 #include <typeinfo>
-#include "Polynom.h"
+#include "Polynom.hpp"
 #include <vector>
 
 using namespace std;
