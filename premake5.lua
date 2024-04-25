@@ -1,15 +1,24 @@
 workspace "GitHub"
    configurations { "Debug", "Release" }
 
-project "polynomial-equation-solver"
-   kind "SharedLib"
+project "demo"
+   kind "ConsoleApp"
    language "C++"
-   files { "**.hpp", "**.cpp" }
+   files { "demo.cpp" }
+   includedirs { "lib/export" }
 
+   links {"polynomial-equation-solver"}
+   
+project "polynomial-equation-solver"
+   kind "StaticLib"
+   language "C++"
+   files { "lib/**.hpp", "lib/**.cpp" }
+   includedirs { "lib/export", "lib/include" }
+   
    filter { "configurations:Debug" }
-      defines { "PES_DEBUG" }
-      symbols "On"
+   defines { "PES_DEBUG" }
+   symbols "On"
 
    filter { "configurations:Release" }
-      defines { "PES_RELEASE" }
-      optimize "On"
+   defines { "PES_RELEASE" }
+   optimize "On"

@@ -1,30 +1,25 @@
-#include <iostream>
-#include <typeinfo>
 #include "Polynom.hpp"
-#include <vector>
 
-using namespace std;
+#include <iostream>
 
 int main() {
 
-   Polynom poly;
+  using namespace polynomial_equation_solver;
 
-   Polynom::printPolynom(poly);
+  Polynom polynom = Polynom({-5, 1, 4, 1});
 
-   switch (Polynom::getPolynomOrder(poly)){
+  polynom.toString();
 
-      case 0 :
-        cout << "Error\n";
-        break;
-      case 1 :
-        cout << Polynom::sovleFirstDegree(poly) << endl;
-        break;
-      case 2 :
-          cout << Polynom::sovleSecondDegree(poly) << endl;
-          break;
-      default :
-        cout << Polynom::newtonsMethodSolve(poly) << endl;
-   }
+  printf("%s\n", polynom.toString().c_str());
+
+  double solution = 0;
+  if (Polynom::solvePolynom(polynom, solution) == true) {
+    printf("A solution is = %lf\n", solution);
+  }
+
+  else {
+    printf("No solution found!\n");
+  }
 
   return 0;
 }
